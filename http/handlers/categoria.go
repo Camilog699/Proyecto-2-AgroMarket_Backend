@@ -10,6 +10,10 @@ import (
 	"habilitacion_backend/utils/io/response"
 )
 
+/*
+funcion creada para obtener la informacion generada en el endpoint
+para crear una categoria
+*/
 func CrearCategoria(w http.ResponseWriter, r *http.Request) {
 	var body models.Categoria
 	err := request.Json(r, &body)
@@ -25,6 +29,10 @@ func CrearCategoria(w http.ResponseWriter, r *http.Request) {
 	response.Json(categoria, http.StatusOK, w)
 }
 
+/*
+funcion creada para obtener la informacion generada en el endpoint
+para actualizar una categoria
+*/
 func ActualizarCategoria(w http.ResponseWriter, r *http.Request) {
 	keys := r.URL.Query()["id"]
 	if len(keys) <= 0 {
@@ -50,6 +58,10 @@ func ActualizarCategoria(w http.ResponseWriter, r *http.Request) {
 	response.Json(categoria, http.StatusOK, w)
 }
 
+/*
+funcion creada para obtener la informacion generada en el endpoint
+para eliminar una categoria
+*/
 func EliminarCategoria(w http.ResponseWriter, r *http.Request) {
 	keys := r.URL.Query()["id"]
 	if len(keys) <= 0 {
@@ -64,6 +76,10 @@ func EliminarCategoria(w http.ResponseWriter, r *http.Request) {
 	response.Json("OK", http.StatusOK, w)
 }
 
+/*
+funcion creada para obtener la informacion generada en el endpoint
+para todas las categorias
+*/
 func ListarCategorias(w http.ResponseWriter, r *http.Request) {
 	categorias, err := services.ListarCategorias()
 	if err != nil {
@@ -73,6 +89,10 @@ func ListarCategorias(w http.ResponseWriter, r *http.Request) {
 	response.Json(categorias, http.StatusOK, w)
 }
 
+/*
+funcion creada para obtener la informacion generada en el endpoint
+para obtener una categoria
+*/
 func ObtenerCategoria(w http.ResponseWriter, r *http.Request) {
 	keys := r.URL.Query()["id"]
 	if len(keys) <= 0 {

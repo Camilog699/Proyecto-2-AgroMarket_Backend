@@ -4,6 +4,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
+// Modelo de categoria con diferentes campos
 type Categoria struct {
 	ID            primitive.ObjectID `bson:"_id,omitempty" json:"id"`
 	Nombre        string             `json:"nombre" bson:"nombre"`
