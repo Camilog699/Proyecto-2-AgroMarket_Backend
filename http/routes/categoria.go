@@ -4,6 +4,9 @@ import (
 	"habilitacion_backend/http/handlers"
 )
 
+/*
+creación de los diferentes endopints para la categoria de productos
+*/
 func registrarRutasCategoria() {
 	router.HandleFunc("/categoria/crear", handlers.CrearCategoria).Methods("POST")
 	router.HandleFunc("/categoria/actualizar", handlers.ActualizarCategoria).Methods("PUT")
