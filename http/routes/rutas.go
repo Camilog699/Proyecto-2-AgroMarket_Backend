@@ -9,6 +9,7 @@ var router *mux.Router
 func CreateRouter() *mux.Router {
 	router = mux.NewRouter()
 	registrarRutasCategoria()
+	registrarRutasProducto()
 
 	return router
 }
